@@ -9,6 +9,14 @@
        select * from user where id=#{id}
     </select>
     
+    <select id="getUserListCount" resultType="int">
+        select count(*) as count from user
+    </select>
+    
+    <select id="getUserList" parameterType="Map" resultType="model.po.User">
+        select * from user order by id desc limit #{start} , #{limit}
+    </select>
+    
     
     <insert id="insertUser" parameterType="model.po.User">
         <selectKey resultType="int" order="AFTER" keyProperty="id" keyColumn="id">

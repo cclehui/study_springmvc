@@ -38,6 +38,7 @@
 	        </c:forEach>
 		</table>
 	</div>
+	<div class="pager">${pagerHtml}</div>
 <% } %>
 
 

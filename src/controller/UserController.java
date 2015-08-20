@@ -13,7 +13,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.ContextLoader;
+import org.springframework.web.servlet.ModelAndView;
 
+import common.Pager;
 import common.servlet.RequestUtil;
 import common.servlet.ServletRequestUtil;
 
@@ -22,20 +24,34 @@ import common.servlet.ServletRequestUtil;
 public class UserController {
 
     @RequestMapping(value = "/index")
-    public String index(HttpServletRequest request , HttpServletResponse response) {
+    public ModelAndView index(HttpServletRequest request ) {
         
+    	int cur_page = Integer.parseInt(request.getParameter("pg"));
+    	int page_size = 2;
+    	int start = (cur_page - 1) * page_size;
+    	start = start > 0 ? start : 0;
         
         UserDao userDao = new UserDao();
-        List<User> userList = userDao.getUserList(0, 0, 20);
+        List<User> userList = userDao.getUserList(start, page_size);
         
-        //Integer.parseInt(null);
+        int totalUser = userDao.getUserListCount();
         
-//        model.addAttribute("userList", userList);
+        Pager pager = new Pager();
+        pager.setTotalCount(totalUser);
+        pager.setPageRowCount(page_size);
+        pager.setCurPage(cur_page);
+        String pagerHtml = pager.getToolBar("/springmvc/user/index.do");
         
-        request.setAttribute("userList", userList);
-        request.setAttribute("action", "index");
         
-        return "user/index";
+        
+        
+        ModelAndView modelAndView = new ModelAndView("user/index");
+        
+        modelAndView.addObject("userList", userList);
+        modelAndView.addObject("pagerHtml", pagerHtml);
+        modelAndView.addObject("action", "index");
+        
+        return modelAndView;
     }
     
     @RequestMapping(value = "addUser")

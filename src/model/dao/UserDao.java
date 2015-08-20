@@ -1,12 +1,13 @@
 package model.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
 import common.ContextUtil;
-
 import model.po.User;
 
 public class UserDao {
@@ -20,25 +21,29 @@ public class UserDao {
 		return user;
 	}
 	
+	
+	public int getUserListCount() {
+		
+		SqlSession sqlSession = ContextUtil.getSqlSession();
+		
+		int userListCount = sqlSession.selectOne("model.mybatis.mapper.UserMapper.getUserListCount");
+		
+		return userListCount;
+	}
     
     
-    public List<User> getUserList(int sort , int offset , int limit){
+    public List<User> getUserList(int offset , int limit){
         
-        List<User> userList = new ArrayList<User>();
-        
-        User user1 = new User();
-        user1.setName("cclehui");
-        user1.setBirthday("1989-03-18");
-        user1.setSex(1);
-        
-        User user2 = new User();
-        user2.setName("mahongjuan");
-        user2.setBirthday("1989-02-06");
-        user2.setSex(0);
-        
-        userList.add(user1);
-        userList.add(user2);
-        
+    	
+    	SqlSession sqlSession = ContextUtil.getSqlSession();
+    	
+    	
+    	Map<String, Object> selectParams = new HashMap<String, Object>();
+    	selectParams.put("start", offset);
+    	selectParams.put("limit", limit);
+    	
+        List<User> userList = sqlSession.selectList("model.mybatis.mapper.UserMapper.getUserList", selectParams);
+          
         return userList;
     }
     
