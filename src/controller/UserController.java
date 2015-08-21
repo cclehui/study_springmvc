@@ -26,7 +26,11 @@ public class UserController {
     @RequestMapping(value = "/index")
     public ModelAndView index(HttpServletRequest request ) {
         
-    	int cur_page = Integer.parseInt(request.getParameter("pg"));
+    	int cur_page = 0;
+    	if (request.getParameter("pg") != null) {
+    		cur_page = Integer.parseInt(request.getParameter("pg"));
+    	}
+    	
     	int page_size = 2;
     	int start = (cur_page - 1) * page_size;
     	start = start > 0 ? start : 0;

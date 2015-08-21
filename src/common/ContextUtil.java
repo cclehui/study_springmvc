@@ -17,9 +17,9 @@ public class ContextUtil {
 	
 	public static SqlSession getSqlSession() {
 		
-		SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)ContextUtil.getBean("sqlSessionFactory");
+		//SqlSessionFactory sqlSessionFactory = (SqlSessionFactory)ContextUtil.getBean("sqlSessionFactory");
 		
-		SqlSession sqlSession = sqlSessionFactory.openSession();
+		SqlSession sqlSession = (SqlSession)ContextUtil.getBean("sqlSession");
 		
 		return sqlSession;
 		

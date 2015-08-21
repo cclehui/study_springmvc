@@ -43,7 +43,7 @@ public class UserDao {
     	selectParams.put("limit", limit);
     	
         List<User> userList = sqlSession.selectList("model.mybatis.mapper.UserMapper.getUserList", selectParams);
-          
+        
         return userList;
     }
     
@@ -60,8 +60,7 @@ public class UserDao {
     		
     		result = user.getId();
     		
-    		sqlSession.commit();
-    		sqlSession.close();
+    		
     	}
     	
     	return result;
