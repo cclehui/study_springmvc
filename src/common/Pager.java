@@ -3,66 +3,66 @@ package common;
 public class Pager {
 
 	/**
-	 * ·ÖÒ³
-	 * @ËµÃ÷£º±¾·ÖÒ³²ÉÓÃÖ±½Ó»ñÈ¡Ã¿Ò»Ò³µÄÊı¾İ
+	 * åˆ†é¡µ
+	 * @è¯´æ˜ï¼šæœ¬åˆ†é¡µé‡‡ç”¨ç›´æ¥è·å–æ¯ä¸€é¡µçš„æ•°æ®
 	 * @author Etwo
 	 */
 	
 	/*
-	 * ·ÖÒ³ÒªËØ£º
-	 * 1¡¢Ê×Ò³				first
-	 * 2¡¢×îºóÒ»Ò³			last
-	 * 3¡¢Ò³×ÜÊı				pageCount
-	 * 4¡¢×Ü¹²ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼	rowCount
-	 * 5¡¢Ã¿Ò³ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼	pageRowCount
-	 * 6¡¢µ±Ç°Ò³				curPage	
-	 * 7¡¢¶¨ÒåÃ¿Ò»Ò³µÄ¿ªÊ¼	start
-	 * 8¡¢¶¨ÒåÃ¿Ò»Ò³µÄ½áÊø	end
+	 * åˆ†é¡µè¦ç´ ï¼š
+	 * 1ã€é¦–é¡µ				first
+	 * 2ã€æœ€åä¸€é¡µ			last
+	 * 3ã€é¡µæ€»æ•°				pageCount
+	 * 4ã€æ€»å…±æ˜¾ç¤ºçš„æ•°æ®è®°å½•	rowCount
+	 * 5ã€æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®è®°å½•	pageRowCount
+	 * 6ã€å½“å‰é¡µ				curPage	
+	 * 7ã€å®šä¹‰æ¯ä¸€é¡µçš„å¼€å§‹	start
+	 * 8ã€å®šä¹‰æ¯ä¸€é¡µçš„ç»“æŸ	end
 	 */
 	
 	/**
-	 * 1¡¢Ê×Ò³				first
+	 * 1ã€é¦–é¡µ				first
 	 */
 	private int first;
 	
 	/**
-	 * 2¡¢×îºóÒ»Ò³			last
+	 * 2ã€æœ€åä¸€é¡µ			last
 	 */
 	private int last;
 	
 	/**
-	 * 3¡¢Ò³×ÜÊı				pageCount
+	 * 3ã€é¡µæ€»æ•°				pageCount
 	 */
 	private int pageCount;
 	
 	/**
-	 * 4¡¢×Ü¹²ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼	totalCount
+	 * 4ã€æ€»å…±æ˜¾ç¤ºçš„æ•°æ®è®°å½•	totalCount
 	 */
 	private long totalCount;
 	
 	/**
-	 * 5¡¢Ã¿Ò³ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼	pageRowCount
+	 * 5ã€æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®è®°å½•	pageRowCount
 	 */
 	private int pageRowCount;
 	
 	/**
-	 * 6¡¢µ±Ç°Ò³				curPage	
+	 * 6ã€å½“å‰é¡µ				curPage	
 	 */
 	private int curPage;
 	
 	/**
-	 * 7¡¢¶¨ÒåÃ¿Ò»Ò³µÄ¿ªÊ¼	start
+	 * 7ã€å®šä¹‰æ¯ä¸€é¡µçš„å¼€å§‹	start
 	 */
 	private int start;
 	
 	/**
-	 * 8¡¢¶¨ÒåÃ¿Ò»Ò³µÄ½áÊø	end
+	 * 8ã€å®šä¹‰æ¯ä¸€é¡µçš„ç»“æŸ	end
 	 */
 	private int end;
 
 
 	/**
-	 * ¼ÆËã²¢µÃ³öÒ³×ÜÊı
+	 * è®¡ç®—å¹¶å¾—å‡ºé¡µæ€»æ•°
 	 * @return
 	 */
 	public int getPageCount() {
@@ -71,7 +71,7 @@ public class Pager {
 	}
 
 	/**
-	 * µÃµ½×Ü¹²ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼
+	 * å¾—åˆ°æ€»å…±æ˜¾ç¤ºçš„æ•°æ®è®°å½•
 	 * @return
 	 */
 	public long getTotalCount() {
@@ -79,7 +79,7 @@ public class Pager {
 	}
 
 	/**
-	 * ÉèÖÃ×Ü¹²ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼
+	 * è®¾ç½®æ€»å…±æ˜¾ç¤ºçš„æ•°æ®è®°å½•
 	 * @param rowCount
 	 */
 	public void setTotalCount(long totalCount) {
@@ -87,7 +87,7 @@ public class Pager {
 	}
 
 	/**
-	 * µÃµ½Ã¿Ò³ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼
+	 * å¾—åˆ°æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®è®°å½•
 	 * @return
 	 */
 	public int getPageRowCount() {
@@ -95,7 +95,7 @@ public class Pager {
 	}
 
 	/**
-	 * ÉèÖÃÃ¿Ò³ÏÔÊ¾µÄÊı¾İ¼ÇÂ¼
+	 * è®¾ç½®æ¯é¡µæ˜¾ç¤ºçš„æ•°æ®è®°å½•
 	 * @param pageRowCount
 	 */
 	public void setPageRowCount(int pageRowCount) {
@@ -103,7 +103,7 @@ public class Pager {
 	}
 
 	/**
-	 * µÃµ½µ±Ç°Ò³
+	 * å¾—åˆ°å½“å‰é¡µ
 	 * @return
 	 */
 	public int getCurPage() {
@@ -116,7 +116,7 @@ public class Pager {
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°Ò³
+	 * è®¾ç½®å½“å‰é¡µ
 	 * @param curPage
 	 */
 	public void setCurPage(int curPage) {
@@ -124,7 +124,7 @@ public class Pager {
 	}
 
 	/**
-	 * µÃµ½Ã¿Ò³µÄ¿ªÊ¼¼ÇÂ¼Êı
+	 * å¾—åˆ°æ¯é¡µçš„å¼€å§‹è®°å½•æ•°
 	 * @return
 	 */
 	public int getStart() {
@@ -133,7 +133,7 @@ public class Pager {
 	}
 
 	/**
-	 * µÃµ½Ã¿Ò³µÄ½áÊø¼ÇÂ¼Êı
+	 * å¾—åˆ°æ¯é¡µçš„ç»“æŸè®°å½•æ•°
 	 * @return
 	 */
 	public int getEnd() {
@@ -142,7 +142,7 @@ public class Pager {
 	}
 
 	/**
-	 * µÃµ½Ê×Ò³
+	 * å¾—åˆ°é¦–é¡µ
 	 * @return
 	 */
 	public int getFirst() {
@@ -151,7 +151,7 @@ public class Pager {
 	}
 	
 	/**
-	 * µÃµ½×îºóÒ»Ò³
+	 * å¾—åˆ°æœ€åä¸€é¡µ
 	 * @return
 	 */
 	public int getLast() {
@@ -160,7 +160,7 @@ public class Pager {
 	}
 	
 	/**
-	 * ÉÏÒ»Ò³
+	 * ä¸Šä¸€é¡µ
 	 * @return
 	 */
 	public int previous() {
@@ -168,7 +168,7 @@ public class Pager {
 	}
 	
 	/**
-	 * ÏÂÒ»Ò³
+	 * ä¸‹ä¸€é¡µ
 	 * @return
 	 */
 	public int next() {
@@ -176,7 +176,7 @@ public class Pager {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÊÇÊ×Ò³
+	 * åˆ¤æ–­æ˜¯å¦æ˜¯é¦–é¡µ
 	 * @return
 	 */
 	public boolean isFirst() {
@@ -184,7 +184,7 @@ public class Pager {
 	}
 	
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÊÇ×îºóÒ»Ò³
+	 * åˆ¤æ–­æ˜¯å¦æ˜¯æœ€åä¸€é¡µ
 	 * @return
 	 */
 	public boolean isLast() {
@@ -192,7 +192,7 @@ public class Pager {
 	}
 	
 	/**
-	 * ¿Í»§¶ËÏÔÊ¾µÄ¹¤¾ßÌõ
+	 * å®¢æˆ·ç«¯æ˜¾ç¤ºçš„å·¥å…·æ¡
 	 */
 	public String getToolBar(String url) {
         String str, temp;
@@ -201,7 +201,7 @@ public class Pager {
         	return "";
         }
         
-        //ÓÃÓÚÅĞ¶ÏurlÖĞÊÇ·ñ´æÔÚ£¿
+        //ç”¨äºåˆ¤æ–­urlä¸­æ˜¯å¦å­˜åœ¨ï¼Ÿ
         if(url.indexOf("?") == -1) {
             temp = "?";
         } else {
@@ -211,29 +211,29 @@ public class Pager {
         str = "<form method='post' name='frmPage' action='" + url + "'> ";
         str += "<p id='page'>";
         str += "<span style='font-size: 12px; font-weight: bold;'>";
-        //ÅĞ¶ÏÊÇ·ñÊÇÊ×Ò³
+        //åˆ¤æ–­æ˜¯å¦æ˜¯é¦–é¡µ
         if(isFirst()) {
-        	str += "Ê×Ò³ ÉÏÒ»Ò³&nbsp;";
+        	str += "é¦–é¡µ ä¸Šä¸€é¡µ&nbsp;";
         } else {
-            str += "<a href='" + url + temp + "pg=" + this.getFirst() + "'>Ê×Ò³</a>&nbsp;";
-            str += "<a href='" + url + temp + "pg=" + this.previous() + "'>ÉÏÒ»Ò³</a>&nbsp;";
+            str += "<a href='" + url + temp + "pg=" + this.getFirst() + "'>é¦–é¡µ</a>&nbsp;";
+            str += "<a href='" + url + temp + "pg=" + this.previous() + "'>ä¸Šä¸€é¡µ</a>&nbsp;";
         }
-        //ÅĞ¶ÏÊÇ·ñÊÇ×îºóÒ»Ò³
+        //åˆ¤æ–­æ˜¯å¦æ˜¯æœ€åä¸€é¡µ
         if(isLast()) {
-        	str += "ÏÂÒ»Ò³ Î²Ò³&nbsp;";
+        	str += "ä¸‹ä¸€é¡µ å°¾é¡µ&nbsp;";
         } else {
-            str += "<a href='" + url + temp + "pg=" + this.next() + "'>ÏÂÒ»Ò³</a>&nbsp;";
-            str += "<a href='" + url + temp + "pg=" + this.getLast() + "'>Î²Ò³</a>&nbsp;";
+            str += "<a href='" + url + temp + "pg=" + this.next() + "'>ä¸‹ä¸€é¡µ</a>&nbsp;";
+            str += "<a href='" + url + temp + "pg=" + this.getLast() + "'>å°¾é¡µ</a>&nbsp;";
         }
-        str += "&nbsp;¹²<b>" + this.totalCount + "</b>Ìõ¼ÇÂ¼&nbsp;";
-        str += "&nbsp;×ªµ½<select name='page' onChange=\"location='" + url + temp + "pg='+this.options[this.selectedIndex].value\">";
+        str += "&nbsp;å…±<b>" + this.totalCount + "</b>æ¡è®°å½•&nbsp;";
+        str += "&nbsp;è½¬åˆ°<select name='page' onChange=\"location='" + url + temp + "pg='+this.options[this.selectedIndex].value\">";
         
         for(int i = 1; i <= this.getPageCount(); i++) {
-        	//ÅĞ¶ÏÊÇ·ñÊÇµ±Ç°Ò³£¬ÈôÊÇ£¬ÔòÄ¬ÈÏÎªÑ¡ÖĞµ±Ç°Ò³
+        	//åˆ¤æ–­æ˜¯å¦æ˜¯å½“å‰é¡µï¼Œè‹¥æ˜¯ï¼Œåˆ™é»˜è®¤ä¸ºé€‰ä¸­å½“å‰é¡µ
             if(i == this.getCurPage())
-                str += "<option value='" + i + "' selected>µÚ" + i + "Ò³</option>";
+                str += "<option value='" + i + "' selected>ç¬¬" + i + "é¡µ</option>";
             else
-                str += "<option value='" + i + "'>µÚ" + i + "Ò³</option>";
+                str += "<option value='" + i + "'>ç¬¬" + i + "é¡µ</option>";
         }
         str += "</select></span></p></form>";
         return str;

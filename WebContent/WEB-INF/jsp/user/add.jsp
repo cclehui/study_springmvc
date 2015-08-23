@@ -8,6 +8,9 @@
 
 <%@ include file="header.jsp" %>
 
+<% 
+    User user = (User)request.getAttribute("user");
+%>
 
 <h3>添加用户</h3>
 
@@ -16,18 +19,18 @@
         <table>
             <tr>
                 <td>用户名</td>
-                <td><input type="text" name="name" value="" /></td>
+                <td><input type="text" name="name" value="${user.name}" /></td>
             </tr>
             <tr>
                 <td>生日</td>
-                <td><input type="text" name="birthday" value="" /></td>
+                <td><input type="text" name="birthday" value="${user.birthday}" /></td>
             </tr>
             <tr>
                 <td>性别</td>
                 <td>
                     <select name="sex"> 
-                        <option value="1">男</option>
-                        <option value="0">女</option>
+                        <option value="1" <%= user.getSex() == 1 ? "selected=\"selected\"" : "" %>>男</option>
+                        <option value="0" <%= user.getSex() == 0 ? "selected=\"selected\"" : "" %>>女</option>
                     </select>
                 </td>
             </tr>

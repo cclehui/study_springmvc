@@ -25,6 +25,11 @@
         insert into user(name, birthday , sex) values(#{name}, #{birthday} , #{sex})
     </insert>
     
+    <delete id="deleteUser" parameterType="int" >
+       delete from user where id=#{id}
+    </delete>
+    
+    
     
    <!-- 
     <update id="updateUser" parameterType="User">

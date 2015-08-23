@@ -66,5 +66,10 @@ public class UserDao {
     	return result;
     }
     
+    public int deleteUser(int id) {
+    	SqlSession sqlSession = ContextUtil.getSqlSession();
+    	
+    	return sqlSession.delete("model.mybatis.mapper.UserMapper.deleteUser", id);
+    }
 
 }

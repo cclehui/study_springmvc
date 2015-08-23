@@ -24,8 +24,8 @@ import common.servlet.ServletRequestUtil;
 public class UserController {
 
     @RequestMapping(value = "/index")
-    public ModelAndView index(HttpServletRequest request ) {
-        
+    public ModelAndView index(HttpServletRequest request ) throws Exception {
+    	
     	int cur_page = 0;
     	if (request.getParameter("pg") != null) {
     		cur_page = Integer.parseInt(request.getParameter("pg"));
@@ -94,6 +94,23 @@ public class UserController {
     	
     	
     	return "redirect:/user/index.do?uid=" + userId;
+    }
+    
+    @RequestMapping(value = "deleteUser")
+    public String deleteUser(HttpServletRequest request) {
+    	
+    	RequestUtil reqeustUtil = new ServletRequestUtil();
+    	
+    	int userId = reqeustUtil.getInt("uid", request);
+    	
+    	if (userId > 0) {
+    		UserDao userDao = new UserDao();
+    		int result = userDao.deleteUser(userId);
+    	}
+    	
+    	request.setAttribute("action", "index");
+    	
+    	return "redirect:/user/index.do";
     }
     
     

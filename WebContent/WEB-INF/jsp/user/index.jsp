@@ -31,8 +31,8 @@
 	                    </c:choose>
 	               </td>
 	               <td>
-	                    <a href="#">编辑</a>&nbsp;&nbsp;
-	                    <a href="#">删除</a>
+	                    <a href="/springmvc/user/addUser.do?uid=${user.id}">编辑</a>&nbsp;&nbsp;
+	                    <a href="/springmvc/user/deleteUser.do?uid=${user.id}" onclick="return confirm('确定要删除该用户吗');">删除</a>
 	               </td>
 	            </tr>
 	        </c:forEach>
